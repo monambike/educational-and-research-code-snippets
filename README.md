@@ -8,14 +8,6 @@ Aqui há alguns exercícios e projetos aleatórios, em sua maioria de pequeno po
 <br>
 <br>
 
-## SUMÁRIO
-
-- [ÁRVORE](#árvore_do_repositório)
-  - [2021_05_18](#2021_05_18)
-
-<br>
-<br>
-
 ## ÁRVORE DO REPOSITÓRIO
 
 ```
