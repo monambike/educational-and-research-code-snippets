@@ -1,5 +1,5 @@
 # EXERCÍCIOS BEM FEITOS
-*(última atualização: 2021/05/18)*
+*(última atualização: 18/05/2021)*
 
 <br>
 
