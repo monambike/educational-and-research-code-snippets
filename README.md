@@ -10,9 +10,10 @@ Aqui há alguns exercícios e projetos aleatórios, em sua maioria de pequeno po
 
 ## SUMÁRIO
     
-- [ESTRUTURA DO REPOSITÓRIO](estrutura-do-repositório)
-    - [Legenda](legenda)
-- [ÁRVORE DO REPOSITÓRIO](árvore-do-repositório)
+- [ESTRUTURA DO REPOSITÓRIO](#estrutura-do-repositório)
+    - [Legenda](#legenda)
+    - [Exemplo](#exemplo)
+- [ÁRVORE DO REPOSITÓRIO](#árvore-do-repositório)
 
 <br>
 <br>
@@ -22,7 +23,7 @@ Explicação de como funciona a estruturação dos repositórios.
 
 <br>
 
-**Legenda**
+#### Legenda
 
 <br>
 
@@ -35,7 +36,7 @@ Explicação de como funciona a estruturação dos repositórios.
 <br>
 <br>
 
-**Exemplo**
+#### Exemplo
 
 <br>
 
