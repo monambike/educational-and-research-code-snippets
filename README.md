@@ -9,12 +9,27 @@ Aqui há alguns exercícios e projetos aleatórios, em sua maioria de pequeno po
 <br>
 
 ## ESTRUTURA DO REPOSITÓRIO
+Explicação de como funciona a estruturação dos repositórios.
 
-<data-do-projeto> - Data do projeto no formato [YYYY_MM_DD]
-<nome-do-projeto> - Nome do projeto.
-[instituição] - Nome da intituição é opcional. Como Fatec, SENAI, e entre outros.
+<br>
 
-Exemplo:
+**Legenda**
+
+<br>
+
+\<data-do-projeto\> - Data do projeto no formato \[YYYY_MM_DD\]
+
+\<nome-do-projeto\> - Nome do projeto.
+
+\[instituição\] - Nome da intituição é opcional. Como Fatec, SENAI, e entre outros.
+
+<br>
+<br>
+
+**Exemplo**
+
+<br>
+
 ```        
 exerciciosbemfeitos
 |   LICENSE
