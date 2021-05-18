@@ -10,22 +10,25 @@ Aqui há alguns exercícios e projetos aleatórios, em sua maioria de pequeno po
 
 ## ESTRUTURA DO REPOSITÓRIO
 
-```
-<data-do-projeto>
-    <nome-do-projeto>-[instituição]
-        <conteúdo
-        
+<data-do-projeto> - Data do projeto no formato [YYYY_MM_DD]
+<nome-do-projeto> - Nome do projeto.
+[instituição] - Nome da intituição é opcional. Como Fatec, SENAI, e entre outros.
+
+Exemplo:
+```        
 exerciciosbemfeitos
-│   LICENSE
-│   README.md
-│
-<data-do-projeto>
+|   LICENSE
+|   README.md
+|
+└───<data-do-projeto>
+|   └───<nome-do-projeto>-[instituição]
+|   |   │   ...
+|   |   │
+|   |   └───...
+|   └───<nome-do-projeto>-[instituição]
+|          └───...
+└───<data-do-projeto>
     └───<nome-do-projeto>-[instituição]
-    |   │   ...
-    |   │
-    |   └───...
-    └───<nome-do-projeto>-[instituição]
-        └───...
 ```
 
 <br>
