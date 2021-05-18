@@ -8,6 +8,15 @@ Aqui há alguns exercícios e projetos aleatórios, em sua maioria de pequeno po
 <br>
 <br>
 
+## SUMÁRIO
+    
+- [ESTRUTURA DO REPOSITÓRIO](estrutura-do-repositório)
+    - [Legenda](legenda)
+- [ÁRVORE DO REPOSITÓRIO](árvore-do-repositório)
+
+<br>
+<br>
+
 ## ESTRUTURA DO REPOSITÓRIO
 Explicação de como funciona a estruturação dos repositórios.
 
