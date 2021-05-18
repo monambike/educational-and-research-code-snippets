@@ -8,16 +8,41 @@ Aqui há alguns exercícios e projetos aleatórios, em sua maioria de pequeno po
 <br>
 <br>
 
+## ESTRUTURA DO REPOSITÓRIO
+
+```
+<data-do-projeto>
+    <nome-do-projeto>-[instituição]
+        <conteúdo
+        
+exerciciosbemfeitos
+│   LICENSE
+│   README.md
+│
+<data-do-projeto>
+    └───<nome-do-projeto>-[instituição]
+    |   │   ...
+    |   │
+    |   └───...
+    └───<nome-do-projeto>-[instituição]
+        └───...
+```
+
+<br>
+<br>
+
 ## ÁRVORE DO REPOSITÓRIO
 
 ```
+exerciciosbemfeitos
 │   LICENSE
 │   README.md
 │
 └───2021_05_18
-    │   Exercicio UserForm 2.xlsm
-    │
-    └───resources
-            exerciciouserform2_money.ico
-            exerciciouserform2_money.png
+    └───investments-fatec
+        │   Exercicio UserForm 2.xlsm
+        │
+        └───resources
+                exerciciouserform2_money.ico
+                exerciciouserform2_money.png
 ```
