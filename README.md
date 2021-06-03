@@ -65,12 +65,28 @@ exerciciosbemfeitos
 exerciciosbemfeitos
 │   LICENSE
 │   README.md
+│   tree.txt
 │
-└───2021_05_18
-    └───investments-fatec
-        │   Exercicio UserForm 2.xlsm
+├───2021_05_18
+│   └───investments-fatec
+│       │   Exercicio UserForm 2.xlsm
+│       │
+│       └───resources
+│               exerciciouserform2_money.ico
+│               exerciciouserform2_money.png
+│
+└───2021_05_31
+    └───test-fatec
+        │   1 - Programacao em Microinformatica - Trabalho Avaliativo NP2.pdf
+        │   prova_exercicio1.xlsm
+        │   prova_exercicio2.xlsm
+        │   prova_exercicio3.xlsm
+        │   prova_exercicio4.xlsm
         │
-        └───resources
-                exerciciouserform2_money.ico
-                exerciciouserform2_money.png
+        └───recursos
+                handcursor.ico
+                icons8-user-location-96.ico
+                icons8-user-location-96.png
+                trivago-squarelogo-1606479467545.ico
+                trivago-squarelogo-1606479467545.png
 ```
