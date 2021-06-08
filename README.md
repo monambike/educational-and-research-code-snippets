@@ -91,6 +91,7 @@ exerciciosbemfeitos
 │
 └───2021_06_07
     └───test-fatec
+        |   1 - Programacao em Microinformatica - Trabalho Avaliativo Substitutivo.pdf
         │   exercicio1.xlsm
         │   exercicio2.xlsm
         │
