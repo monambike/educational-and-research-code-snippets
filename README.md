@@ -64,7 +64,6 @@ exerciciosbemfeitos
 ```
 exerciciosbemfeitos
 │   LICENSE
-│   out.txt
 │   README.md
 │   
 ├───2021_05_18
