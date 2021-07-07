@@ -64,16 +64,17 @@ exerciciosbemfeitos
 ```
 exerciciosbemfeitos
 │   LICENSE
+│   out.txt
 │   README.md
-│
+│   
 ├───2021_05_18
 │   └───investments-fatec
 │       │   Exercicio UserForm 2.xlsm
-│       │
+│       │   
 │       └───resources
 │               exerciciouserform2_money.ico
 │               exerciciouserform2_money.png
-│
+│               
 ├───2021_05_31
 │   └───test-fatec
 │       │   1 - Programacao em Microinformatica - Trabalho Avaliativo NP2.pdf
@@ -81,20 +82,24 @@ exerciciosbemfeitos
 │       │   prova_exercicio2.xlsm
 │       │   prova_exercicio3.xlsm
 │       │   prova_exercicio4.xlsm
-│       │
+│       │   
 │       └───recursos
 │               handcursor.ico
 │               icons8-user-location-96.ico
 │               icons8-user-location-96.png
 │               trivago-squarelogo-1606479467545.ico
 │               trivago-squarelogo-1606479467545.png
-│
-└───2021_06_07
-    └───test-fatec
-        |   1 - Programacao em Microinformatica - Trabalho Avaliativo Substitutivo.pdf
-        │   exercicio1.xlsm
-        │   exercicio2.xlsm
-        │
-        └───resources
-                handcursor.ico
+│               
+├───2021_06_07
+│   └───test-fatec
+│       │   1 - Programacao em Microinformatica - Trabalho Avaliativo Substitutivo.pdf
+│       │   exercicio1.xlsm
+│       │   exercicio2.xlsm
+│       │   
+│       └───resources
+│               handcursor.ico
+│               
+└───2021_07_07
+    └───ouroweb
+            test_arguments_3.py
 ```
