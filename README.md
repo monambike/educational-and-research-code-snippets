@@ -1,3 +1,4 @@
-# EXERCÍCIOS BEM FEITOS
+# WELL-DONE EXERCISES
+### Educational and Research Code Snippets
 
-Neste repositório estão dispostos alguns exercícios, provas e pequenos projetos de alguma faculdade, curso ou alguma instituição que acabaram por ter um resultado satisfatório, e por conta disso quis guardar como lembrança.
+In this repository, you will find several exercises, exams, and small projects from a college, course, or institution that yielded satisfactory results. As a result, I wanted to keep them as a keepsake.
