@@ -26,10 +26,10 @@ def display_header() -> None:
     print("------------------------------" + "\n"
     + "CÁLCULO DE EXPRESSÃO" + "\n"
     + "\n"
-    + "Esse Script fará o cálculo da expressão \"f(x) = Kx²+2x+5\", "
+    + "Esse programa fará o cálculo da expressão \"f(x) = Kx²+2x+5\", "
     + "onde K = 109." + "\n"
     + "\n"
-    + "Para tanto, por favor, forneça um valor para X:" + "\n"
+    + "Para tanto, por favor, forneça um valor para \"x\":" + "\n"
     + "------------------------------" + "\n")
 
 
@@ -85,7 +85,7 @@ while True:
     user_input = retrieve_user_input()
     result = calculate_expression(user_input)
 
-    print("O resultado se dá por: \"" + str(result) + "\".\n\n")
+    print(f"O resultado se dá por: \"{str(result)}\".\n\n")
     
     valid_answer = False
     while not valid_answer:
