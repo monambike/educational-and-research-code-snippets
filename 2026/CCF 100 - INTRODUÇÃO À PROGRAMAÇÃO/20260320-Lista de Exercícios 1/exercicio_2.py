@@ -9,8 +9,8 @@
 # Exercício 2 da lista 1 de exercícios de programação.
 # ------------------------------------------------------------ #
 
-import subprocess
 import platform
+import subprocess
 import textwrap
 
 
