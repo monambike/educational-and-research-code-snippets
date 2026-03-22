@@ -1,4 +1,4 @@
-# ------------------------------------------------------------
+# ------------------------------------------------------------ #
 # Copyright(c) 2026 Vinicius Gabriel Marques de Melo. All rights reserved.
 # UFV - UNIVERSIDADE FEDERAL DE VIÇOSA
 #
@@ -7,37 +7,42 @@
 #
 # Description:
 # Exercício 1 da lista 1 de exercícios de programação.
-# ------------------------------------------------------------
+# ------------------------------------------------------------ #
 
-import subprocess
 import platform
+import subprocess
+import textwrap
 
+CONST_K = 109
 
 def clear_terminal() -> None:
+    """Clears the terminal based upon the operational system."""
     subprocess.run("cls" if platform.system() == "Windows" else "clear", shell = True)
 
 
-def display_header() -> None:
-    """Clears terminal and displays header explaining welcoming script usage.
-    """
+def show_start_screen() -> None:
+    """Shows start screen explaining script usage."""
 
-    clear_terminal()
+    print(textwrap.dedent("""
+    ------------------------------------------------------------
+                        CÁLCULO DE EXPRESSÃO
+    ------------------------------------------------------------
 
-    print("------------------------------" + "\n"
-    + "CÁLCULO DE EXPRESSÃO" + "\n"
-    + "\n"
-    + "Esse programa fará o cálculo da expressão \"f(x) = Kx²+2x+5\", "
-    + "onde K = 109." + "\n"
-    + "\n"
-    + "Para tanto, por favor, forneça um valor para \"x\":" + "\n"
-    + "------------------------------" + "\n")
+    Esse programa fará o cálculo da expressão "f(x) = Kx²+2x+5",
+    onde K = 109.
+    
+    Para tanto, por favor, forneça um valor para "x":
+    ------------------------------------------------------------\n"""))
 
 
-def retrieve_user_input() -> float:
-    """Asks, validates and retrieves the user input.
+def input_numeric(input_text: str) -> float:
+    """Requests the user for a numeric input and validates it.
+
+    Accepts both comma and dot as decimal separators. Repeats
+    until a valid number is entered.
 
     Returns:
-        float: Returns the user input as a number.
+        float: The validated numeric input.
     """
     
     is_wrong_input = False
@@ -45,21 +50,23 @@ def retrieve_user_input() -> float:
     while True:
         user_input = None
 
+        clear_terminal()
+
         # Displaying header explaining the user input.
-        display_header()
+        show_start_screen()
 
         # Displaying error message if input is wrong.
-        if is_wrong_input: print("<< Por favor, insira um número válido! >>\n\n")
+        if is_wrong_input:
+            print("""<< Por favor, insira um número válido! >>""")
 
         try:
-            # Retrieving the user input and converting to float.
-            user_input = float(input("Valor de \"x\": "))
+            # Retrieving the user input and converting to float and allowing
+            # conma as input.
+            user_input = float(input(input_text).replace(",", "."))
+
+            return user_input
         except:
             is_wrong_input = True
-
-        # If user already input a correct number, exits the function.
-        if isinstance(user_input, (int, float)):
-            return user_input
 
 
 def calculate_expression(x: float) -> float:
@@ -67,31 +74,44 @@ def calculate_expression(x: float) -> float:
     of "x" returning a float value.
 
     Args:
-        x (float): _description_
+        x (float): The input value of "x".
 
     Returns:
-        float: _description_
+        float: The result of "f(x)" from the expression.
     """
-    CONST_K = 109
 
     # f(x) = Kx² + 2x + 5
     y = CONST_K * x**2 + 2*x + 5
-    
+
     return y
 
 
-keep_trying = True
-while True:
-    user_input = retrieve_user_input()
+def run_calculation():
+    user_input = input_numeric("Valor de \"x\": ")
     result = calculate_expression(user_input)
-
-    print(f"O resultado se dá por: \"{str(result)}\".\n\n")
     
-    valid_answer = False
-    while not valid_answer:
-        answer = input("Você gostaria de tentar novamente?[Y/n]").lower()
+    # Remove leading zeros.
+    if (result.is_integer()): result = int(result)
 
-        if answer in ("y", ""):
-            break
-        elif answer == "n":
-            quit()
+    return result
+
+
+def main():
+    while True:
+        result = run_calculation()
+
+        # Format the result to replace dot with comma allowing more inputs.
+        formatted_result = str(result).replace(".", ",")
+
+        print(f"O resultado se dá por: \"{formatted_result}\".\n\n")
+        
+        while True:
+            answer = input("Você gostaria de fazer outra operação?[Y/n]").lower()
+
+            if answer in ("y", ""):
+                break
+            elif answer == "n":
+                quit()
+
+
+main()

@@ -3,18 +3,15 @@
 # UFV - UNIVERSIDADE FEDERAL DE VIÇOSA
 #
 # Subject: CCF 100 - INTRODUÇÃO À PROGRAMAÇÃO
-# Script Date: 2026/03/20 18:18
+# Script Date: 2026/03/21 19:16
 #
 # Description:
-# Exercício 3 da lista 1 de exercícios de programação.
+# Exercício 5 da lista 1 de exercícios de programação.
 # ------------------------------------------------------------ #
 
 import platform
 import subprocess
 import textwrap
-
-
-CONST_MEAN_QUANTITY = 5
 
 
 def clear_terminal() -> None:
@@ -27,17 +24,16 @@ def show_start_screen() -> None:
 
     # Contextualizing the script for the user.
     print(textwrap.dedent(f"""
-    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                        CALCULADORA DE MÉDIA
-    ==============================================================
+    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                  CONVERSOR DE FARENHEIT PARA CELSIUS
+                    ⋆꙳•̩̩͙❅*̩̩͙‧͙    ‧͙*̩̩͙❆ ͙͛ ̩̩͙‧͙    ‧͙*̩ ˚₊⋆ ⋆꙳•̩̩͙❅*
 
-    A média é um valor obtido informando um ou mais números, soma-
-    ndo-os,  e  dividindo-os  pela quantidade de números que foram
-    informados.
-    Por favor, informe {CONST_MEAN_QUANTITY} números para que pos-
-    sa ser feita sua média. 
-    
-    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n"""))
+    A fórmula para converter de Farenheit para Celsius é:
+    "C = (F - 32) * 5 / 9".
+
+    Por favor, informe um valor em Farenheit para que seja feita a
+    conversão para Celsius.
+    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"""))
 
 
 def input_numeric(input_text: str) -> float:
@@ -76,32 +72,17 @@ def input_numeric(input_text: str) -> float:
             return user_input
 
 
-def calculate_and_display_mean():
-    clear_terminal()
+def convert_celsius_to_farenheit():
+    farenheit = input_numeric("Informe o Valor em Farenheit: ")
 
-    show_start_screen()
+    celsius = (farenheit - 32) * 5 / 9
 
-    user_input_sum = 0
-    user_inputs = []
-    for index in  range(1, CONST_MEAN_QUANTITY + 1):
-        user_input = input_numeric(f"Informe o {index}º valor: ")
-
-        user_input_sum += user_input
-        user_inputs.append(user_input)
-
-    mean = user_input_sum / CONST_MEAN_QUANTITY
-
-    # Format the result to replace dot with comma allowing more inputs.
-    formatted_result = str(mean).replace(".", ",")
-
-    print(textwrap.dedent(f"""
-    Valores Informados: {", ".join(map(str, user_inputs))}
-    O valor total da média é: {formatted_result}\n"""))
+    print(f"{farenheit}°F equivalem a {celsius:.2f}°C.")
 
 
 def main():
     while True:
-        calculate_and_display_mean()
+        convert_celsius_to_farenheit()
         
         while True:
             answer = input("Você gostaria de fazer outra operação?[Y/n]").lower()

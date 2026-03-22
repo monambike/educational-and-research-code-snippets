@@ -3,18 +3,15 @@
 # UFV - UNIVERSIDADE FEDERAL DE VIÇOSA
 #
 # Subject: CCF 100 - INTRODUÇÃO À PROGRAMAÇÃO
-# Script Date: 2026/03/20 18:18
+# Script Date: 2026/03/21 17:20
 #
 # Description:
-# Exercício 3 da lista 1 de exercícios de programação.
+# Exercício 4 da lista 1 de exercícios de programação.
 # ------------------------------------------------------------ #
 
 import platform
 import subprocess
 import textwrap
-
-
-CONST_MEAN_QUANTITY = 5
 
 
 def clear_terminal() -> None:
@@ -27,17 +24,16 @@ def show_start_screen() -> None:
 
     # Contextualizing the script for the user.
     print(textwrap.dedent(f"""
-    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-                        CALCULADORA DE MÉDIA
-    ==============================================================
-
-    A média é um valor obtido informando um ou mais números, soma-
-    ndo-os,  e  dividindo-os  pela quantidade de números que foram
-    informados.
-    Por favor, informe {CONST_MEAN_QUANTITY} números para que pos-
-    sa ser feita sua média. 
+    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+                         CALCULADORA DE JUROS
+    $ % / $ % / $ % / $ % / $ % / $ % / $ % / $ % / $ % / $ % / $
+    O  cálculo  de  juros é dado por "M = C x (1 + i)^t", onde "P"
+    é  o valor principal, "i" é a taxa de juros e "t" é o tempo em
+    anos.
     
-    >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n"""))
+    Por  favor,  informe  o valor da parcela, a taxa de juros para
+    que seja feito o cálculo dos juros.
+    <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n"""))
 
 
 def input_numeric(input_text: str) -> float:
@@ -76,32 +72,37 @@ def input_numeric(input_text: str) -> float:
             return user_input
 
 
-def calculate_and_display_mean():
-    clear_terminal()
+def calculate_interest(installment: float, interest_rate: float, total_months: int = 12) -> None:
+    final_text = []
 
-    show_start_screen()
+    print("\nValores das Parcelas (de acordo com o mês):")
 
-    user_input_sum = 0
-    user_inputs = []
-    for index in  range(1, CONST_MEAN_QUANTITY + 1):
-        user_input = input_numeric(f"Informe o {index}º valor: ")
+    columns = 3
+    lines = int(total_months / columns)
+    for month_index in range(1, total_months + 1):
+        line_index = 0
 
-        user_input_sum += user_input
-        user_inputs.append(user_input)
+        # M = C x (1 + i) ^ t
+        result = installment * (1 + interest_rate) ** month_index
+        final_text.insert(month_index - 1, f"{month_index:02}º mês: {result:.2f}")
 
-    mean = user_input_sum / CONST_MEAN_QUANTITY
+        if month_index % columns == 0:
+            line_index += 1
 
-    # Format the result to replace dot with comma allowing more inputs.
-    formatted_result = str(mean).replace(".", ",")
+    for line_index in range(lines):
+        print(" | ".join(final_text[line_index*columns:(line_index+1)*columns]))
 
     print(textwrap.dedent(f"""
-    Valores Informados: {", ".join(map(str, user_inputs))}
-    O valor total da média é: {formatted_result}\n"""))
+        Valor da Parcela: {installment}
+        Juros Calculado: {interest_rate}\n"""))
 
 
 def main():
     while True:
-        calculate_and_display_mean()
+        installment = input_numeric("Valor da Parcela: ")
+        interest_rate = input_numeric("Valor da Taxa de Juros: ")
+            
+        calculate_interest(installment, interest_rate)
         
         while True:
             answer = input("Você gostaria de fazer outra operação?[Y/n]").lower()
