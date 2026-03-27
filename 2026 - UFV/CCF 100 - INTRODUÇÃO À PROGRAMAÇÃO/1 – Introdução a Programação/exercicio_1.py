@@ -9,11 +9,14 @@
 # Exercício 1 da lista 1 de exercícios de programação.
 # ------------------------------------------------------------ #
 
+
 import platform
 import subprocess
 import textwrap
 
+
 CONST_K = 109
+
 
 def clear_terminal() -> None:
     """Clears the terminal based upon the operational system."""
@@ -96,15 +99,15 @@ def run_calculation():
     return result
 
 
-def main():
+def retry_loop(action: callable[[], None]):
+    """Runs a loop of an action until the user decides to quit.
+
+    Args:
+        action (callable[[], None]): The action to be performed in the loop.
+    """
     while True:
-        result = run_calculation()
+        action()
 
-        # Format the result to replace dot with comma allowing more inputs.
-        formatted_result = str(result).replace(".", ",")
-
-        print(f"O resultado se dá por: \"{formatted_result}\".\n\n")
-        
         while True:
             answer = input("Você gostaria de fazer outra operação?[Y/n]").lower()
 
@@ -112,6 +115,23 @@ def main():
                 break
             elif answer == "n":
                 quit()
+
+
+def start_program():
+    """The main method responsible for starting the program functions."""
+
+    # Running the calculation and storing the result.
+    result = run_calculation()
+
+    # Format the result to replace dot with comma allowing more inputs.
+    formatted_result = str(result).replace(".", ",")
+
+    print(f"O resultado se dá por: \"{formatted_result}\".\n\n")
+
+
+def main():
+    """The main entrypoint of the application."""
+    retry_loop(start_program)
 
 
 main()
