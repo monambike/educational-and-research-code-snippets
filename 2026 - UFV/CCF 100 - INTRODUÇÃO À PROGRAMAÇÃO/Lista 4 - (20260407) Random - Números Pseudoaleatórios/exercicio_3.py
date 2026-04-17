@@ -10,7 +10,9 @@
 # ------------------------------------------------------------ #
 
 
+import platform
 import random
+import subprocess
 import textwrap
 
 
@@ -20,16 +22,61 @@ AVAILABLE_COINS = [HEAD, TAIL]
 TIMES_FLIP_COIN = 5
 
 
+class Utils:
+    def clear_terminal() -> None:
+        """Clears the terminal based upon the operational system."""
+        subprocess.run("cls" if platform.system() == "Windows" else "clear", shell = True)
+
+
+    def refresh_screen():
+        """Clears the terminal and displays the start screen of the application."""
+        Utils.clear_terminal()
+
+        Messages.start_screen()
+
+
+    def retry_loop(action: callable[[], None]):
+        """Runs a loop of an action until the user decides to quit.
+
+        Args:
+            action (callable[[], None]): The action to be performed in the loop.
+        """
+        while True:
+            action()
+
+            while True:
+                answer = input("Gostaria de jogar novamente?[Y/n]").lower()
+
+                if answer in ("y", ""):
+                    break
+                elif answer == "n":
+                    quit()
+
+
+class Messages:
+    def start_screen():
+        """Displays the start screen of the application."""
+        print(textwrap.dedent(f"""
+            =============================================================
+            + JOGO - CARA OU CORIA                                      +
+            +                                                           +
+            + Será sorteado cara ou coroa {TIMES_FLIP_COIN} vezes!                      +
+            +                                                           +
+            ============================================================="""))
+
+
 def get_random_coin_flip():
     random_coin = random.choice(AVAILABLE_COINS)
     return random_coin
+
 
 def filter_values_from_list(list, filter):
     filtered_list = [item for item in list if filter in item]
     return filtered_list
 
+
 def start_program():
-    input("<<Pressione enter para começar!>>")
+    Utils.refresh_screen()
 
     coins = []
     for index in range(1, TIMES_FLIP_COIN + 1):
@@ -41,13 +88,15 @@ def start_program():
 
     msg = textwrap.dedent(f"""
         Foram realizados {TIMES_FLIP_COIN} lançamentos.
-        Foram obtidos: {len(heads)} caras e {len(tails)} coroas!""")
+        Foram obtidos: {len(heads)} caras e {len(tails)} coroas!\n""")
 
     print(msg)
 
 
 def main():
-    start_program()
+    """The main entrypoint of the application."""
+    Utils.retry_loop(start_program)
 
 
+# Running the main function of the application.
 main()
